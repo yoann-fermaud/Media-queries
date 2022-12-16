@@ -1,0 +1,16 @@
+/* html {
+    background-color: red;
+}
+canvas.load {
+    background-color: red;
+} */
+
+
+/* canvas element.style {
+    background-color: red;
+} */
+
+canvas {
+    width: 100%;
+    object-fit: contain;
+}
