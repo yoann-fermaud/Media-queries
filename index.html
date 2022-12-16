@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/voyages.css">
+    <link rel="stylesheet" href="CSS/voyages-home.css">
+    <link rel="icon" href="Icons/earth-icon.webp">
+    <script src="JS/three.js"></script>
+    <script defer src="JS/earth.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/289fbec248.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <title>Earth</title>
+</head>
+<body>
+    <canvas id="c" style="object-fit: contain;"></canvas>
+    <h1 class="ml2">Welcome to earth</h1>
+    
+    <a class="nav-btn hide">
+      <span class="fas fa-align-justify fa-2xl" onclick="nav_out()"></span>
+    </a>
+
+    <nav class="sidebar">
+      <p>The Earth</p>
+      <ul>
+        <li><a >Home</a></li>
+        <li>
+          <a class="country-btn">Pays
+          <span class="fas fa-angle-down"></span>
+          </a>
+          <ul class="country-show">
+            <li class="media-large"><a onclick="zoom_in(0,1,'Canada')" class="hide-btn media-large">Canada</a></li>
+            <li class="media-medium"><a href="./Canada.html" class="hide-btn">Canada</a></li>
+          </ul>
+        </li>
+        
+    
+        <li>
+          <a class="name-btn">Prénoms
+          <span class="fas fa-angle-down"></span>
+          </a>
+          <ul class="name-show">
+            <li class="media-large"><a onclick="zoom_in(0,1,'Canada')" class="hide-btn">Yoann Fermaud</a></li>
+            <li class="media-medium"><a href="./Canada.html" class="hide-btn">Yoann Fermaud</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <article id="pop-up">
+      <p id="pop-up-text"></p>
+      <div class="btn-container">
+        <div class="button" onclick="zoom_out()">Retour</div>
+        <div class="button" onclick="redirect_Country()">Decouvrir</div>
+      </div>
+      <section id="arrow">
+        <div class="chevron"></div>
+      </section>
+    </article>
+
+    <input type="checkbox" class="checkbox hide-btn" id="checkbox">
+
+    <label for="checkbox" class="label hide">
+      <i class="fas fa-moon"></i>
+      <i class='fas fa-sun'></i>
+      <div class='ball'>
+    </label>
+
+    <script>
+        $('.country-btn').click(function(){
+          $('nav ul .country-show').toggleClass("show");
+        });
+        $('.name-btn').click(function(){
+          $('nav ul .name-show').toggleClass("show");
+        });
+    
+        $('.nav-btn').click(function(){
+          $('.sidebar').toggleClass("show");
+          $('.nav-btn').toggleClass("show");
+        });
+
+        $('.hide-btn').click(function(){
+          $('.sidebar').removeClass("show");
+          $('.nav-btn').removeClass("show");
+        });
+    </script>
+</body>
+</html>
